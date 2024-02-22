@@ -1,8 +1,22 @@
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
+import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
+
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
+  const config = new DocumentBuilder()
+        .setTitle('Saas')
+        .setDescription('The Saas API documentation')
+        .setVersion('1.0')
+        .setLicense('Download Postman collection', '/apidocs-json')
+        .addBearerAuth()
+        .build();
+    const document = SwaggerModule.createDocument(app, config);
+    
+    // http://localhost:3000/apidocs
+
+    SwaggerModule.setup('apidocs', app, document);
   await app.listen(3000);
 }
 bootstrap();

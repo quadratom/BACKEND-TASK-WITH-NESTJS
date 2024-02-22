@@ -41,6 +41,13 @@ $ npm run start
 # watch mode
 $ npm run start:dev
 
+# After Running the Application with npm run start:dev , run 
+$  http://localhost:3000/apidocs
+# on your browser to test with swagger
+
+# Question two is Name question-two.tst in the file.
+# Check it for full detail on  Designing Database Tables (ERD) of Merchants and Products.
+
 # production mode
 $ npm run start:prod
 ```
@@ -71,20 +78,3 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 ## License
 
 Nest is [MIT licensed](LICENSE).
-
-
-## QUESTION 2
-## ENTITY RELATIONSHIP DIAGRAM
-
-To represent the entities in the problem (merchants and products), we can create two tables: Merchants and Products. Here's a simple Entity-Relationship Diagram (ERD) for the database design:
-
-+--------------+       +--------------+
-|   Merchants  |       |   Products   |
-+--------------+       +--------------+
-| merchantId   | 1    *| skuId        |
-| name         |       | name         |
-| ...          |       | description  |
-+--------------+       | price        |
-                       | merchantId   |  *--------|----- 1  +--------------+
-                       +--------------+                     |   Merchants  |
-                                                             +--------------+
