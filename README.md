@@ -45,7 +45,7 @@ $ npm run start:dev
 $  http://localhost:3000/apidocs
 # on your browser to test with swagger
 
-# Question two is Name question-two.tst in the file.
+# Question two is Name question-two.txt in the file.
 # Check it for full detail on  Designing Database Tables (ERD) of Merchants and Products.
 
 # production mode
