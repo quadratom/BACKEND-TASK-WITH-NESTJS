@@ -10,9 +10,19 @@ export class MerchantsService {
         return this.products.get(merchantId) || [];
     }
 
+
     findAll() {
-        return this.products;
-    }
+        let allProducts: ProductDto[] = [];
+        this.products.forEach((products: ProductDto[]) => {
+          allProducts = allProducts.concat(products);
+        });
+        return allProducts;
+      }
+    
+
+    // findAll() {
+    //     return this.products;
+    // }
 
     create(productDto: ProductDto) {
         const merchantId = productDto.merchantId;
